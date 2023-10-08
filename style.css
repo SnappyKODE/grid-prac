@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+body{
+    background-color: hsl(210, 46%, 95%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    display: grid;
+    width: 65%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+
+.box{
+    border-radius: 10px;
+    color: white;
+    padding: 20px;
+}
+
+.box:nth-child(1){
+    grid-column: span 2;
+    background: hsl(263, 55%, 52%)  url('images/bg-pattern-quotation.svg') no-repeat 80% 0px;
+    background-size: 90px;
+}
+
+.box:nth-child(2){
+    background-color: hsl(217, 19%, 35%);
+}
+
+.box:nth-child(3), .box:nth-child(4){
+    background-color: white;
+    color: black;
+    box-shadow: 20px 20px 20px -18px hsl(0, 0%, 81%);
+}
+
+.box:nth-child(3){
+    grid-row: span 2;
+}
+
+.box:nth-child(5){
+    background-color: hsl(219, 29%, 14%);
+    grid-column: span 2;
+}
+
+.name{
+    font-size: 0.7rem;
+}
+
+.vg{
+    opacity: 50%;
+    font-size: 0.6rem;
+}
+
+.msg{
+    font-size: 1rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.quote{
+    opacity: 70%;
+    font-size: 0.7rem;
+}
+
+.avatar img{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    border: 1px solid white;
+    float: left;
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 480px) and (orientation: portrait) {
+    body{
+        height: 100%;
+    }
+
+    .container{
+        width: 85%;
+        margin-top: 50px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    .box:nth-child(1){
+        grid-column: 1;
+    }
+
+    .box:nth-child(3){
+        grid-row: auto;
+        order: 2;
+    }
+
+    .box:nth-child(5){
+        grid-column: 1;
+    }
+}
